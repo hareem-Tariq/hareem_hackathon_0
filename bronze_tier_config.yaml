@@ -1,0 +1,117 @@
+# Bronze Tier Configuration
+# This file marks the repository as Bronze Tier and defines enabled features
+
+tier: bronze
+version: 1.0.0
+tier_name: "Bronze Tier - Local Automation"
+
+# Enabled Features (Bronze Tier)
+features:
+  filesystem_watcher: true
+  claude_orchestrator: true
+  obsidian_vault: true
+  agent_skills:
+    - planning_skills
+    - file_analysis_skill
+
+# Disabled Features (Platinum → Bronze downgrade)
+disabled_features:
+  watchers:
+    - gmail_watcher
+    - twitter_watcher
+    - facebook_watcher
+    - instagram_watcher
+    - linkedin_watcher
+    - odoo_watcher
+  
+  mcp_servers:
+    - email_server
+    - calendar_server
+    - slack_server
+    - twitter_server
+    - facebook_server
+    - instagram_server
+    - linkedin_server
+    - odoo_server
+    - browser_server
+  
+  workflows:
+    - task_queue
+    - hitl_approvals
+    - action_executor
+    - audit_logging
+    - ralph_loop
+    - watchdog
+    - retry_handler
+  
+  deployment:
+    - docker_compose
+    - kubernetes
+    - gke
+    - pm2
+    - cloud_api
+  
+  integrations:
+    - gmail_api
+    - twitter_api
+    - facebook_api
+    - instagram_api
+    - linkedin_api
+    - odoo_api
+    - plaid_api
+    - stripe_api
+
+# Folders (Bronze Tier structure)
+folders:
+  watch_inbox: "./watch_inbox"
+  vault_path: "./obsidian_vault"
+  needs_action: "./obsidian_vault/Needs_Action"
+  plans: "./obsidian_vault/Plans"
+  done: "./obsidian_vault/Done"
+  agent_skills: "./obsidian_vault/agent_skills"
+  logs: "./logs"
+
+# Scripts (Bronze Tier)
+scripts:
+  windows_start: "start_local_bronze.ps1"
+  orchestrator: "orchestrator_claude_bronze.py"
+  watcher: "watcher_filesystem_bronze.py"
+
+# API Configuration
+api:
+  anthropic:
+    model: "claude-sonnet-4-20250514"
+    max_tokens: 2000
+    required: true
+  
+# Timing Configuration
+timing:
+  orchestrator_cycle_seconds: 15
+  watcher_poll_seconds: 10
+  file_stability_seconds: 3
+
+# Limits
+limits:
+  max_file_size_bytes: 51200  # 50KB
+  tasks_per_cycle: 1
+  max_plan_tokens: 2000
+
+# Architecture Notes
+notes: |
+  This is the BRONZE TIER implementation - minimal viable product.
+  
+  Bronze Tier follows these principles:
+  - Local-first (no cloud dependencies)
+  - File-based workflows (no databases)
+  - Simple Markdown formats
+  - Claude Sonnet 4.5 for reasoning
+  - No action execution (planning only)
+  
+  To upgrade to Silver/Gold/Platinum:
+  1. Enable additional watchers
+  2. Add MCP servers
+  3. Implement HITL workflows
+  4. Add task queue
+  5. Enable cloud deployment
+  
+  See BRONZE_TIER_README.md for full documentation.
