@@ -1,5 +1,7 @@
 # Personal AI Employee - Bronze Tier 🥉
 
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-blue.svg?logo=github)](https://github.com/hareem-Tariq/hareem_hackathon_0)
+
 **Version**: 1.0 (Bronze Tier - Foundation)  
 **Status**: ✅ Ready to Use  
 **Hackathon 0 Compliant**
