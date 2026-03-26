@@ -111,8 +111,7 @@ hackathon 0/
 ├── .env                             ← API keys (create this)
 ├── .env.bronze.example              ← Template
 ├── bronze_tier_config.yaml          ← Configuration
-├── BRONZE_TIER_README.md            ← Full guide
-├── BRONZE_TIER_QUICK_REF.md         ← Quick reference
+├── introduction.md                  ← Introduction guide
 ├── README.md                        ← This file
 ├── watch_inbox/                     ← Drop files here
 ├── logs/                            ← Application logs
@@ -193,9 +192,7 @@ WATCH_PATH=./watch_inbox
 
 ## 📚 Documentation
 
-- **[BRONZE_TIER_README.md](BRONZE_TIER_README.md)** - Complete guide
-- **[BRONZE_TIER_QUICK_REF.md](BRONZE_TIER_QUICK_REF.md)** - Quick reference
-- **[BRONZE_TIER_CONVERSION_SUMMARY.md](BRONZE_TIER_CONVERSION_SUMMARY.md)** - Technical details
+- **[introduction.md](introduction.md)** - Introduction guide
 - **[bronze_tier_config.yaml](bronze_tier_config.yaml)** - Configuration reference
 
 ---
@@ -326,7 +323,7 @@ MIT License
 ## 📞 Support
 
 - **Check logs**: `logs/orchestrator_bronze.log`
-- **Read docs**: `BRONZE_TIER_README.md`
+- **Read docs**: `introduction.md`
 - **Review config**: `bronze_tier_config.yaml`
 - **Check vault**: `obsidian_vault/Dashboard.md`
 
